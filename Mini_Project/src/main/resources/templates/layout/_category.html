@@ -1,0 +1,13 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+        	<div class="glyphicon glyphicon-briefcase">
+    		<b th:text="#{category.category}" style="margin-left: 50px;"></b>
+    		</div>
+        </div>
+        <div class="list-group">
+            <a th:each="c:${cates}" th:href="@{|/product/listsp?cid=${c.id}|}" 
+             class="list-group-item">[[${c.name}]]</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <nav class="navbar navbar-default" style="font-variant: normal; background-color: #91e0eb;">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li><a th:href="@{/}" th:text="#{nav.home}"></a></li>
+	            <th:block th:if="${#request.remoteUser}"> 
+	                <li><a th:href="@{/security/logoff}" th:text="#{nav.signout}"></a></li>
+	                <li th:if="${#request.isUserInRole('ADMIN') or #request.isUserInRole('PM')}">
+	                	<a th:href="@{/admin/home/index}" th:text="#{nav.manage}"></a>
+	                </li>
+	            </th:block>
+	            <th:block th:unless="${#request.remoteUser}">  
+	            <li><a th:href="@{/security/login/form}" th:text="#{nav.signin}"></a></li> 
+	            </th:block> 
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+        			<a href="?lang=vi"><img th:src="@{/assets/images/Vn.jpg}" style="height: 20px; width: 20px; margin-top: 15px; margin-right: 2px;"></a>
+					<a href="?lang=en"><img th:src="@{/assets/images/El.jpg}" style="height: 22px; width: 22px; margin-top: 15px;  margin-right: 30px;"></a>
+            </ul>
+            <ul th:if="${#request.remoteUser}" class="nav navbar-nav navbar-right">
+                <li><a href="#">Welcome [[${#request.remoteUser}]]</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>

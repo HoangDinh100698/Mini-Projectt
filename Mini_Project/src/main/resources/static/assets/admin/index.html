@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java 6 Project</title>
+
+   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+</head>
+<body class="container" ng-app="admin-app">
+    <header class="row">
+    	<h1 class="alert alert-success">Website Administration</h1>
+    </header>
+    <div class="row">
+        <nav class="navbar navbar-inverse" style="font-variant:normal;">
+        	<div class="container-fluid">
+        		<ul class="nav navbar-nav">
+        			<li><a href="/" th:text="#{home.title}">Home</a></li>
+        			<li><a href="#!product">Products</a></li>
+        			<li><a href="#!user">User</a></li>
+        			<li><a href="#!authorize">Authorizing</a></li>
+        			<li><a href="/security/logoff">Sign Out</a></li>
+        		</ul>
+        	</div>
+        </nav>
+    </div>
+	<main>
+		<p class="ng-view"/>
+		<img  src="/assets/images/br1.jpg" width="100%">
+	</main>
+    <footer class="row">
+    	<div class="panel panel-default">
+    		<div class="panel-body text-center" style="background-color: #103b3b;">
+    			<h4 style="color: white;">FPT Polytechnic &copy; 2021. All rights reserved.</h4>
+    		</div>
+    	</div>
+    </footer>
+    <script src="/assets/admin/admin-app.js"></script>
+    <script src="/assets/admin/product/product-ctrl.js"></script>
+    <script src="/assets/admin/authority/authority-ctrl.js"></script>
+    <script src="/assets/admin/user/account-ctrl.js"></script>
+</body>
+</html>

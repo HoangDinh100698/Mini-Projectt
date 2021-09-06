@@ -1,0 +1,13 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <div class="panel panel-primary">
+    		<div class="panel-heading">
+    		<div class="glyphicon glyphicon-shopping-cart">
+    		<b th:text="#{cart.cart1}" style="margin-left: 50px;"></b>
+    		</div>
+	        </div>
+        <div class="panel-body text-center">
+            <i class="glyphicon glyphicon-shopping-cart" style="font-size: 25px;"></i>
+            <a th:href="@{/cart/view}">{{cart.count}} Sản phẩm <br> Tổng tiền: ${{cart.amount|number:2}}</a>
+        </div>
+    </div>
+</div>
